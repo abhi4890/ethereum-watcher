@@ -61,7 +61,7 @@ func ListenForReceiptLogTillExit(
 				to = blockNumToBeProcessedNext
 			}
 
-			logs, err := rpc.GetLogs(uint64(blockNumToBeProcessedNext), uint64(to), contract, interestedTopics)
+			logs, err := rpc.GetLogs(uint64(blockNumToBeProcessedNext), uint64(to), []string{contract}, interestedTopics)
 			if err != nil {
 				return blockNumToBeProcessedNext - 1
 			}

@@ -136,7 +136,7 @@ func (w *ReceiptLogWatcher) Run() error {
 				to = highestBlockCanProcess
 			}
 
-			logs, err := rpc.GetLogs(uint64(blockNumToBeProcessedNext), uint64(to), w.contract, w.interestedTopics)
+			logs, err := rpc.GetLogs(uint64(blockNumToBeProcessedNext), uint64(to), []string{w.contract}, w.interestedTopics)
 			if err != nil {
 				return err
 			}
